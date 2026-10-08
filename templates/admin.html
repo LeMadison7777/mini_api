@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block title %}Administration{% endblock %}
+
+{% block content %}
+<h2>Panneau d'Administration</h2>
+
+<section>
+    <h3>Ajouter un Vélo</h3>
+    <form id="add-bike-form">
+        <input type="text" id="bike-name" placeholder="Nom du vélo" required>
+        <input type="text" id="bike-description" placeholder="Description" required>
+        <input type="number" id="bike-price" placeholder="Prix par heure" step="0.01" required>
+        <input type="url" id="bike-image" placeholder="URL de l'image" required>
+        <button type="submit" class="btn">Ajouter</button>
+    </form>
+</section>
+
+<section>
+    <h3>Vélos Disponibles</h3>
+    <table class="bikes-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Disponible</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for bike in bikes %}
+            <tr>
+                <td>{{ bike.id }}</td>
+                <td>{{ bike.name }}</td>
+                <td>{{ bike.description }}</td>
+                <td>{{ bike.price_per_hour|currency }} FCFA</td>
+                <td>{{ 'Oui' if bike.available else 'Non' }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+
+<section>
+    <h3>Toutes les Réservations</h3>
+    <table class="reservations-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Utilisateur</th>
+                <th>Vélo</th>
+                <th>Début</th>
+                <th>Fin</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for res in reservations %}
+            <tr>
+                <td>{{ res.id }}</td>
+                <td>{{ res.user.username }}</td>
+                <td>{{ res.bike_type.name }}</td>
+                <td>{{ res.start_date.strftime('%d/%m/%Y %H:%M') }}</td>
+                <td>{{ res.end_date.strftime('%d/%m/%Y %H:%M') }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+
+<script>
+document.getElementById('add-bike-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = document.getElementById('bike-name').value;
+    const description = document.getElementById('bike-description').value;
+    const price = parseFloat(document.getElementById('bike-price').value);
+    const image_url = document.getElementById('bike-image').value;
+
+    const response = await fetch('/admin/add_bike', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({name, description, price, image_url})
+    });
+    const result = await response.json();
+    if (result.success) {
+        alert('Vélo ajouté avec succès');
+        location.reload();
+    } else {
+        alert('Erreur: ' + result.error);
+    }
+});
+</script>
+{% endblock %}

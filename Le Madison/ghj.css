@@ -1,0 +1,32 @@
+btn-inscription { 
+display: inline-block;       
+margin-top: 20px;            
+padding: 10px 20px;         
+/* Permet de gérer largeur/hauteur comme un bloc */ 
+/* Espace au-dessus du bouton */ 
+ /* Espacement interne (haut/bas et gauche/droite) */ 
+background-color: #ffcc00;   /* Jaune vif */ 
+color: black;               
+font-weight: bold;           
+border: none;                
+border-radius: 8px;          
+cursor: pointer;             
+ /* Texte noir */ 
+/* Texte en gras */ 
+/* Supprime la bordure par défaut */ 
+/* Coins arrondis */ 
+/* Change le curseur en main au survol */ 
+text-decoration: none;      
+} 
+.btn-inscription:hover { 
+ /* Supprime le soulignement si c’est un lien */ 
+background-color: #ffaa00;   /* Change la couleur au survol (plus foncée) */ 
+} 
+
+body { 
+background-color: rgb(141, 141, 245);   /* Met le fond de la page en bleu */ 
+text-align: center;       
+/* Centre tous les éléments horizontalement */ 
+font-family: Arial, sans-serif; /* Définit la police d’écriture */ 
+color: white;             
+}

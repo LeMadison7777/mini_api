@@ -1,0 +1,47 @@
+#titre { 
+color: hsl(30, 100%, 40%); /* orange chaleureux */ 
+font-size: 3rem;
+margin: 100px;          
+} 
+.important { 
+color: red;                
+font-weight: bold; 
+
+} 
+p { 
+font-size: 1.3em;         
+}
+.Bouton { 
+border: 1px solid #4e3d3d; 
+padding: 10px 20px;  
+display: inline-block; 
+margin-top: 10px; 
+padding: 10px 20px; 
+background-color: #ffcc00; 
+color: black; 
+font-weight: bold; 
+border: none; 
+border-radius: 20px; 
+cursor: pointer; 
+text-decoration: none; 
+}
+.btn-inscription:hover { 
+background-color: #ffaa00;
+}
+.Le{
+    background-color: blueviolet;
+    margin-top: 10px;
+    padding: 10px 10px;
+    border-radius: 10px;
+    text-overflow: ellipsis;
+    text-align: center;
+    color: aqua;
+    border: none;
+    border: 1px solid;
+    display: inline-block; 
+    cursor: pointer;
+    text-decoration:black;
+    
+    
+
+}

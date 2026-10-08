@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>The Sneaker Box - Partenaire de Code</title>
+</head>
+<body id="main-bg" class="transition-colors duration-700 ease-in-out bg-slate-900">
+
+    <div class="relative w-full h-screen flex items-center justify-center overflow-hidden">
+        
+        <!-- Titre Fantôme en arrière-plan -->
+        <h1 class="absolute text-[18vw] font-black text-white/5 uppercase select-none leading-none">NIKE</h1>
+
+        <!-- Carte Produit -->
+        <div class="relative group w-80 h-[500px] bg-white/10 backdrop-blur-xl rounded-[40px] border border-white/20 flex flex-col items-center p-8 shadow-2xl">
+            
+            <!-- Image avec animation Pop-out -->
+            <div class="relative w-full h-64 flex justify-center items-center">
+                <img id="sneaker-img" 
+                     src="https://www.pngmart.com/files/22/Adidas-Shoes-PNG-File.png" 
+                     alt="Sneaker" 
+                     class="absolute w-80 drop-shadow-[0_35px_35px_rgba(0,0,0,0.5)] transition-all duration-500 ease-out 
+                            group-hover:scale-125 group-hover:-rotate-12 group-hover:-translate-y-10 group-hover:-translate-x-5">
+            </div>
+
+            <!-- Contenu Textuel -->
+            <div class="mt-auto text-center w-full">
+                <h2 id="sneaker-name" class="text-white text-3xl font-extrabold uppercase italic tracking-tighter">Air Max Pro</h2>
+                <p id="sneaker-price" class="text-white/70 text-xl font-medium mt-1">129 €</p>
+                
+                <button class="w-full mt-6 py-4 bg-white text-black font-black uppercase rounded-2xl hover:scale-105 transition-transform active:scale-95">
+                    Ajouter au panier
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation du Slider -->
+        <div class="absolute bottom-12 flex gap-6">
+            <button onclick="changeSneaker(-1)" class="p-4 rounded-2xl border border-white/20 text-white hover:bg-white/20 transition-all font-bold">PRÉCÉDENT</button>
+            <button onclick="changeSneaker(1)" class="p-4 rounded-2xl border border-white/20 text-white hover:bg-white/20 transition-all font-bold">SUIVANT</button>
+        </div>
+    </div>
+
+    <script>
+        // 1. Notre "Petit Tableau" de données
+        const sneakers = [
+            {
+                name: "Air Max Red",
+                price: "159 €",
+                image: "vélo5.jpg", // Remplace par tes PNG
+                color: "bg-red-900"
+            },
+            {
+                name: "Blue Velocity",
+                price: "135 €",
+                image: "https://www.pngmart.com/files/1/Nike-Shoes-PNG-Transparent-Image.png",
+                color: "bg-blue-900"
+            },
+            {
+                name: "Dark Shadow",
+                price: "180 €",
+                image: "https://www.pngmart.com/files/22/Nike-Shoes-PNG-Isolated-Image.png",
+                color: "bg-zinc-900"
+            }
+        ];
+
+        let currentIndex = 0;
+
+        // 2. Fonction pour mettre à jour l'interface
+        function updateUI() {
+            const sneaker = sneakers[currentIndex];
+            
+            // Mise à jour du texte et de l'image
+            document.getElementById('sneaker-name').innerText = sneaker.name;
+            document.getElementById('sneaker-price').innerText = sneaker.price;
+            document.getElementById('sneaker-img').src = sneaker.image;
+
+            // Mise à jour de la couleur de fond
+            const body = document.getElementById('main-bg');
+            // On retire toutes les couleurs possibles avant d'ajouter la nouvelle
+            body.className = `transition-colors duration-700 ease-in-out ${sneaker.color}`;
+        }
+
+        // 3. Fonction de navigation
+        function changeSneaker(direction) {
+            currentIndex += direction;
+
+            // Boucle : si on dépasse la fin, on revient au début, et inversement
+            if (currentIndex >= sneakers.length) currentIndex = 0;
+            if (currentIndex < 0) currentIndex = sneakers.length - 1;
+
+            updateUI();
+        }
+    </script>
+</body>
+</html>

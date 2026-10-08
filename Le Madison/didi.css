@@ -1,0 +1,119 @@
+
+
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0%;
+    margin: 0%;
+}
+ul {
+    margin:0%;
+    padding: 0%;
+}
+li {
+    list-style-type: none;
+}
+h2 {
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 30px;
+    font-size:2em ;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+ nav{
+    overflow: hidden;
+    background-color:aliceblue;
+    position: fixed;
+    width:100% ;
+    opacity:0.9 ;
+    
+ }
+ header li{
+    float: right;
+    font-size: 1.2em;
+ }
+ header li{
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    padding: 18px 16px;
+ }
+ #logo{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    float: left;
+ }
+
+
+ /* image principale */
+ #imagePrincipal{
+    padding-top: 60px;
+    background: url(y/img/p/op/te/he/r/m/roro.jpg);
+    background-size: cover;
+    height: 799px;
+
+    
+ }
+ h1{
+    font-family: cursive,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: antiquewhite;
+    font-size: 6em;
+    margin-top: 40px;
+    text-shadow: 10px 3px 2px black ;
+ }
+ #premierTrait{
+    height:1px ;
+    width: 25%;
+    margin: -3px auto;
+    background-color: aliceblue;
+    text-shadow: 7px 3px 2px black ;
+
+ }
+ h3{
+    text-align: center;
+    color: antiquewhite;
+    font-size: 3em;
+    text-shadow: 7px 3px 2px black ;
+ }
+ /* presentation */
+ #presentation{
+    background-color: rgb(143, 132, 183);
+    padding: 10px 0px 100px O;
+ }
+ #textIntro{
+    padding: 0px 20%;
+ }
+#prestations{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 30px 10%;
+    
+}
+.imagesPrestations h4{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 1.8em;
+    margin: 1500px;
+    font-weight:300 ;
+}
+.imagesPrestations img{
+    border-radius: 10px;
+    box-shadow: 3px 4px 5px 4px rgb(31, 31, 33);
+}
+.imagesPrestations img:hover{
+    opacity: 0.5;
+    transform: scale(1.05);
+    transition: 0.6s ease-in-out;
+}
+.inscription{
+   width: 6em;
+   color: brown;
+
+}

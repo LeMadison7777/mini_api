@@ -1,0 +1,10 @@
+Flask
+flask-login
+flask-wtf
+wtforms
+flask-sqlalchemy
+email-validator
+python-dotenv
+gunicorn
+psycopg2-binary
+flask-cors

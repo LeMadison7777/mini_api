@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon site </title>
+    <style> 
+        body { 
+            background-color: rgb(121, 121, 193); 
+            text-align: center; 
+            font-family: Arial, sans-serif; 
+            color: white; 
+        } 
+        h1 { 
+            margin-top: 20px; 
+        } 
+        ol, ul { 
+            display: inline-block; 
+            text-align: left; 
+            margin: 20px; 
+        } 
+        table { 
+            margin: 20px auto; 
+            border-collapse: collapse; 
+            width: 60%; 
+            background-color: white; 
+            color: black; 
+        } 
+        table, th, td { 
+            border: 2px solid black; 
+            padding: 10px; 
+            text-align: center; 
+        } 
+        .btn-inscription { 
+            display: inline-block; 
+            margin-top: 20px; 
+            padding: 10px 20px; 
+            background-color: #ffcc00; 
+            color: black; 
+            font-weight: bold; 
+            border: none; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            text-decoration: none; 
+        } 
+        .btn-inscription:hover { 
+            background-color: #ffaa00; 
+        } 
+        .media { 
+            margin: 20px; 
+        } 
+        a { 
+            color: #ffcc00; 
+            font-weight: bold; 
+        } 
+        img { 
+            margin: 20px; 
+            max-width: 300px; 
+            border: 3px solid white; 
+        } 
+    </style>
+</head>
+<h1> Le Madison Ngoyi </h1>
+<body>
+    <ul>
+        <li> Qui sommes nous ?</li>
+        <li> A propos</li>
+        <li>Contact </li>
+    </ul>
+    <ol>
+        <li> Qui sommes nous ?</li>
+        <li> A propos</li>
+        <li>Contact </li>
+        
+    </ol>
+    
+    <h2> Tableau </h2>
+    <table>
+        <tr>
+
+            <th>Nom </th> 
+            <th>Profession</th>
+            <th> Niveau d'étude </th>
+            <th> Age </th>
+        </tr>
+        <tr>
+            <td> Jean-Marie </td>
+            <td> Informaticien</td>
+            <td> Bac + 5 </td>
+            <td> 27 </td>
+        </tr>
+        <tr> 
+            <td>Marie Flore</td>
+            <td> Banquière</td>
+            <td> Bac +4</td>
+            <td> 25</td>
+        </tr>
+    </table>
+    <image src="velo5.jpg" alt="velo5" width="300" height="200">
+
+     <p>
+            <audio controls>
+                <source src="le.mp3" type="audio/mp3">
+            </audio>
+            
+        </p>
+        <a href="le.mp3" download> Télécharger L'audio </a>
+        <p>
+            <video width="320" height="240" controls autoplay loop>
+            <source src="Le Mad.mp4" type="video/mp4">
+        </video>
+        <a href="leMad.mp4"download> Télécharger la vidéo </a>
+            
+        </p>
+        <div> 
+<button class="btn-inscription">Inscription</button> 
+</div> 
+
+<iframe title="Pointe-Noire"
+    width="942"
+    height="506"
+    id="gmap_canvas"
+    src="https://maps.google.com/maps?q=%20Pointe-Noire,%20Congo&t=&z=13&ie=UTF8&iwloc=&output=embed"
+    scrolling="no">
+</iframe>
+<script>
+function changerVille(ville) {
+    document.getElementById("gmap_canvas").src =
+        "https://maps.google.com/maps?q=" + ville + "&z=13&output=embed";
+}
+</script>
+
+<button onclick="changerVille('Brazzaville,Congo')">
+Changer de ville
+</button>
+<form method="POST" action="api/login">
+  <label for="mail">Email: </label>
+  <input type="email" id="mail" name="mail">
+  <br/>
+  <label for="pw">Password: </label>
+  <input type="password" id="pw" name="pw">
+  <br/>
+  <input type="submit" value="Login">
+  <br/>
+  <input type="checkbox" id="ck" name="ck">
+  <label for="ck">Remember me</label>
+</form>
+<pdf></pdf>
+<Exaucé></Exauc>
+
+
+
+        
+</body>
+</html>

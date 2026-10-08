@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Accueil - Location de Vélos 2025{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="about.html">
+<link
+<section class="hero">
+    <h2>🚴Bienvenue sur BikeRental </h2>
+    <p>Louez des vélos modernes et écologiques pour vos aventures urbaines ou rurales.</p>
+</section>
+
+<section class="bikes">
+    <h2>Nos Vélos Disponibles</h2>
+    <div class="bike-grid">
+        {% for bike in bikes %}
+        <div class="bike-card">
+            <img src="stactic/img/velo-vtt.jpg" alt="{{ bike.name }}">
+            <h3>{{ bike.name }}</h3>
+            <p>{{ bike.description }}</p>
+            <p class="price">{{ bike.price_per_hour|currency }} FCFA/heure</p>
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('reserve', bike_id=bike.id) }}" class="btn">Réserver</a>
+            {% else %}
+                <a href="{{ url_for('login') }}" class="btn">Se connecter pour réserver</a>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+<header class="bg-gradient-to-r from-green-400 to-green-600 text-white p-6 text-center">
+    <h1 class="text-5xl font-bold animate-bounce">Bienvenue sur BikeRental</h1>
+    <p class="mt-2 text-lg">Louez le vélo de vos rêves pour vos aventures !</p>
+</header>
+
+<main class="p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    {% for bike in bikes %}
+    <div class="bg-white rounded-lg shadow-lg p-4 hover:scale-105 transform transition duration-500">
+        <img src="{{ bike.image }}" alt="{{ bike.name }}" class="rounded-lg w-full h-48 object-cover">
+        <h2 class="text-xl font-bold mt-2">{{ bike.name }}</h2>
+        <p>{{ bike.description }}</p>
+        <p class="font-bold mt-1">{{ bike.price }} €/h</p>
+    </div>
+    {% endfor %}
+</main>
+{% endblock %}
+                

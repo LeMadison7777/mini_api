@@ -1,0 +1,26 @@
+# Ignorer tous les fichiers d'environnement (Sécurité)
+.env
+.env.*
+*.env
+
+# Ignorer les dépendances lourdes (Gain d'espace énorme)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Ignorer les dossiers de build (Next.js, React, Vite)
+.next/
+out/
+build/
+
+
+# Ignorer les fichiers temporaires système
+.DS_Store
+Thumbs.db
+
+*.mp4
+"Le Madison/"
+venv/
+node_modules/
+.env
+.env.*

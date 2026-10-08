@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Mon Compte{% endblock %}
+
+{% block content %}
+<h2>Mes Réservations</h2>
+{% if reservations %}
+<table class="reservations-table">
+    <thead>
+        <tr>
+            <th>Vélo</th>
+            <th>Début</th>
+            <th>Fin</th>
+            <th>Créé le</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for res in reservations %}
+        <tr>
+            <td>{{ res.bike_type.name }}</td>
+            <td>{{ res.start_date.strftime('%d/%m/%Y %H:%M') }}</td>
+            <td>{{ res.end_date.strftime('%d/%m/%Y %H:%M') }}</td>
+            <td>{{ res.created_at.strftime('%d/%m/%Y') }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>Vous n'avez pas encore de réservations.</p>
+{% endif %}
+{% endblock %}
